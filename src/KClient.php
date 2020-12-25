@@ -823,5 +823,3 @@ if (!function_exists('getallheaders'))
         return $headers;
     }
 }
-
-class_alias('KClient', 'KClickClient');

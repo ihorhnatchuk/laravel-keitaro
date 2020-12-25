@@ -1,6 +1,7 @@
 <?php 
 namespace Ihorhnatchuk\LKClient;
 
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
 class LKClientServiceProvider extends ServiceProvider
@@ -30,6 +31,14 @@ class LKClientServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('keitaro-adv', function ($app) {
+            return $app->make('Ihorhnatchuk\LKClient\LKClient');
+        });
+
+        $this->app->booting(function () {
+            $loader = AliasLoader::getInstance();
+            $loader->alias('KeitaroAdv', 'Ihorhnatchuk\LKClient\Facades\KeitaroAdv');
+        });
        
     }
 
@@ -40,8 +49,6 @@ class LKClientServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        $this->app->singleton('keitaro-adv', function ($app) {
-            return new LKClient($app);
-        });
+        return ['keitaro-adv'];
     }
 }
