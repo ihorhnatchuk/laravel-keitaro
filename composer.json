@@ -1,0 +1,34 @@
+{
+    "name": "ihorhnatchuk/laravel-keitaro",
+    "description": "Keitaro integration with Laravel 8",
+    "keywords": ["laravel","keitaro"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ihorhnatchuk",
+            "email": "ihorhnatchuk@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "guzzlehttp/guzzle": "^7.0",
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ihorhnatchuk\\LKClient\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ihorhnatchuk\\LKClient\\LKClientServiceProvider"
+            ],
+            "aliases": {
+                "KeitaroAdv": "Ihorhnatchuk\\LKClient\\Facades\\KeitaroAdv"
+            }
+        }
+    }
+}
