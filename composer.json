@@ -10,22 +10,22 @@
         }
     ],
     "require": {
-        "php": "^7.4"
+        "php": "^8.0"
     },
     "require-dev": {
     },
     "autoload": {
         "psr-4": {
-            "Ihorhnatchuk\\LKClient\\": "src/"
+            "Ihorhnatchuk\\LaravelKeitaro\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Ihorhnatchuk\\LKClient\\LKClientServiceProvider"
+                "Ihorhnatchuk\\LaravelKeitaro\\KeitaroClientServiceProvider"
             ],
             "aliases": {
-                "KeitaroAdv": "Ihorhnatchuk\\LKClient\\Facades\\KeitaroAdv"
+                "KeitaroAdv": "Ihorhnatchuk\\LaravelKeitaro\\Facades\\KeitaroClient"
             }
         }
     }

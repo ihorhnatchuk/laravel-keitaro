@@ -1,10 +1,10 @@
 <?php 
-namespace Ihorhnatchuk\LKClient;
+namespace Ihorhnatchuk\LaravelKeitaro;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
-class LKClientServiceProvider extends ServiceProvider
+class KeitaroClientServiceProvider extends ServiceProvider
 {
 
     /**
@@ -31,13 +31,13 @@ class LKClientServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('keitaro-adv', function ($app) {
-            return $app->make('Ihorhnatchuk\LKClient\LKClient');
+        $this->app->singleton('keitaro-client', function ($app) {
+            return $app->make('Ihorhnatchuk\LaravelKeitaro\KClient');
         });
 
         $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
-            $loader->alias('KeitaroAdv', 'Ihorhnatchuk\LKClient\Facades\KeitaroAdv');
+            $loader->alias('KeitaroAdv', 'Ihorhnatchuk\LaravelKeitaro\Facades\KeitaroClient');
         });
        
     }
@@ -49,6 +49,6 @@ class LKClientServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['keitaro-adv'];
+        return ['keitaro-client'];
     }
 }

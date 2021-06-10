@@ -1,6 +1,6 @@
 <?php 
 
-namespace Ihorhnatchuk\LKClient;
+namespace Ihorhnatchuk\LaravelKeitaro;
 
 use Exception;
 
