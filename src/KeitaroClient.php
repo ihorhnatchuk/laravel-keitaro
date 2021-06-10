@@ -1,7 +1,7 @@
 <?php 
-namespace Ihorhnatchuk\LKClient;
+namespace Ihorhnatchuk\LaravelKeitaro;
 
-class LKClient
+class KeitaroClient
 {
     public function execute(string $trackerUrl, string $token)
     {

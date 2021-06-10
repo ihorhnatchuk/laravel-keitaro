@@ -32,7 +32,7 @@ class KeitaroClientServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('keitaro-client', function ($app) {
-            return $app->make('Ihorhnatchuk\LaravelKeitaro\KClient');
+            return $app->make('Ihorhnatchuk\LaravelKeitaro\KeitaroClient');
         });
 
         $this->app->booting(function () {
