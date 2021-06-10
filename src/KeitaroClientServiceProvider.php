@@ -37,7 +37,7 @@ class KeitaroClientServiceProvider extends ServiceProvider
 
         $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
-            $loader->alias('KeitaroAdv', 'Ihorhnatchuk\LaravelKeitaro\Facades\KeitaroClient');
+            $loader->alias('KeitaroClient', 'Ihorhnatchuk\LaravelKeitaro\Facades\KeitaroClient');
         });
        
     }
